@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
     boardController = BoardController(collectionView: wordsCollectionView)
     keyboardController = KeyboardController(collectionView: keyboardCollectionView)
+      
     /*
       Exercise 3: Assign a closure to the `didSelectString` property of `keyboardController` (see KeyboardController.swift):
       
@@ -31,6 +32,14 @@ class ViewController: UIViewController {
      */
     // START YOUR CODE HERE
     // ...
+      keyboardController.didSelectString = { selectedString in
+          if selectedString == DELETE_KEY {
+              self.boardController.deleteLastCharacter()
+          }
+          else{
+              self.boardController.enter(selectedString)
+          }
+      }
     // END YOUR CODE HERE
   }
 }

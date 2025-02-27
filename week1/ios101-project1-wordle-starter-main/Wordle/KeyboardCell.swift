@@ -19,7 +19,7 @@ class KeyboardCell: UICollectionViewCell {
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapString))
     contentView.addGestureRecognizer(tapGestureRecognizer)
   }
-
+                    // take in a string in input
   func configure(with string: String) {
     labelContainerView.layer.cornerRadius = 4.0
     labelContainerView.backgroundColor = .gray
@@ -30,7 +30,8 @@ class KeyboardCell: UICollectionViewCell {
       Checkpoint: After finishing this exercise, you should now be able to see the keyboard laid out on the screen! If it's not working, check your work on exercises 1 & 2.
     */
     // START YOUR CODE HERE
-    // ...
+      self.string = string          
+      label.text = self.string
     // END YOUR CODE HERE
   }
 
@@ -39,6 +40,8 @@ class KeyboardCell: UICollectionViewCell {
   @objc private func didTapString() {
     // START YOUR CODE HERE
     // ...
+      self.didSelectString(self.string)
+
     // END YOUR CODE HERE
   }
 }
