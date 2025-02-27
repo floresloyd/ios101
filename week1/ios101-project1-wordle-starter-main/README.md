@@ -23,11 +23,11 @@ The following **optional** features are implemented:
 
 Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove this reminder once you upload your README. 
 
-![GIFRECORDING](https://github.com/floresloyd/ios101/blob/main/week1/week1readme-assets/recording.gif) .
+![GIFRECORDING](../week1readme-assets/recording.gif) 
 
 
 ## Running on personal iPhone
-![phone](https://raw.githubusercontent.com/floresloyd/ios101/refs/heads/main/week1/week1readme-assets/mobile.webp)
+![phone](../week1readme-assets/mobile.webp)
 ## Notes
 I still feel like im unsure of im doing 80% of the time 
 
