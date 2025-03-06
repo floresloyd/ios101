@@ -53,28 +53,50 @@ class BoardController: NSObject,
     // ...
     // END YOUR CODE HERE
   }
-  
-  // Exercise 1: Implement applyNumLettersSettings to change the number of letters in the goal word
-  // Tip 1: Use a breakpoint to inspect or print the `settings` argument
-  // Tip 2: There is a constant `kNumLettersKey` in Constants.swift that you can use as the key to grab the value in the dictionary
-  // Tip 3: Assign the correct value of the setting to the `numItemsPerRow` property.
-  // Tip 4: You will need to cast the value to the correct type
-  // Checkpoint: Correctly implementing this should allow you to change the number of letters in the goal word!
-  private func applyNumLettersSettings(with settings: [String: Any]) {
-    // START YOUR CODE HERE
-    // ...
-    // END YOUR CODE HERE
-  }
-  
+
+    // parameters will be called `settings` dict[String: Any]
+    private func applyNumLettersSettings(with settings: [String: Any]) {
+        // START YOUR CODE HERE
+        // ...
+        // Exercise 1: Implement applyNumLettersSettings to change the number of letters in the goal word
+        // Tip 1: Use a breakpoint to inspect or print the `settings` argument
+        // Tip 2: There is a constant `kNumLettersKey` in Constants.swift that you can use as the key to grab the value in the dictionary
+        // Tip 3: Assign the correct value of the setting to the `numItemsPerRow` property.
+        // Tip 4: You will need to cast the value to the correct type
+        // Checkpoint: Correctly implementing this should allow you to change the number of letters in the goal word!
+        
+        // Type check if its int
+        if let inputNumLetters = settings[kNumLettersKey] as? Int {
+            if inputNumLetters > 3 && inputNumLetters < 8 {
+                numItemsPerRow = inputNumLetters
+            } else {
+                numItemsPerRow = 5
+            }
+            print("Num Items per row: \(inputNumLetters)")
+        }
+        // if inputNumLetters is not an int
+        else{
+            numItemsPerRow = 5
+            print("Error in inputNumLetters")
+            // END YOUR CODE HERE
+        }
+    }
   // Exercise 2: Implement applyNumGuessesSettings to change the number of rows in the board
   // Tip 1: Use a breakpoint to inspect or print the `settings` argument
   // Tip 2: There is a constant `kNumGuessesKey` in Constants.swift that you can use as the key to grab the value in the dictionary
   // Tip 3: Assign the correct value of the setting to the `numRows` property.
   // Tip 4: You will need to cast the value to the correct type
   // Checkpoint: Correctly implementing this should allow you to change the number of rows in the board!
-  private func applyNumGuessesSettings(with settings: [String: Any]) {
-    // START YOUR CODE HERE
-    // ...
+    private func applyNumGuessesSettings(with settings: [String: Any]) {
+        // START YOUR CODE HERE
+        // ...
+        if let inputNumGuesses = settings[kNumGuessesKey] as? Int {
+            numRows = inputNumGuesses
+            print("numGuesses = \(numRows)")
+        } else{
+            numRows = 6
+            print("Default")
+        }
     // END YOUR CODE HERE
   }
   
@@ -88,6 +110,13 @@ class BoardController: NSObject,
   private func applyThemeSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
     // ...
+      if let inputWordTheme = settings[kWordThemeKey] as? String {
+                print("current word is: \(goalWord)")
+                if let wordThemeConverted = WordTheme(rawValue: inputWordTheme) {
+                    goalWord = WordGenerator.generateGoalWord(with: wordThemeConverted)
+                    print("new word is:  \(goalWord)")
+                }
+            }
     // END YOUR CODE HERE
   }
   
@@ -98,6 +127,19 @@ class BoardController: NSObject,
   private func applyIsAlienWordleSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
     // ...
-    // START YOUR CODE HERE
-  }
+      print(isAlienWordle)
+             if let alienWordle = settings[kIsAlienWordleKey] as? Bool {
+                 isAlienWordle = alienWordle
+             } else {
+                 isAlienWordle = false
+             }
+             if isAlienWordle {
+                 numTimesGuessed += 1
+             }
+             if isAlienWordle && numTimesGuessed % numItemsPerRow == 0 {
+                 goalWord = WordGenerator.generateGoalWord(with: .countries)
+             }
+         }
+    // END YOUR CODE HERE
+  
 }
