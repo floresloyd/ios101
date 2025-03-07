@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Forecast View Controller-->
+        <scene sceneID="FK6-xJ-mHp">
+            <objects>
+                <viewController id="31X-Jt-rv0" customClass="ForecastViewController" customModule="CloudCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ghU-K0-B2v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S88-i3-6Rj">
+                                <rect key="frame" x="71" y="79" width="251" height="50.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" systemColor="tableCellBlueTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-35-4DR">
+                                <rect key="frame" x="39" y="90" width="30" height="28.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9xf-VW-mu1"/>
+                                    <constraint firstAttribute="height" constant="30" id="ub7-Dl-odu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="March 06, 2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-lf-1Rf">
+                                <rect key="frame" x="86" y="357" width="220" height="139"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8zM-ee-Wcz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sTB-lf-1Rf" firstAttribute="top" secondItem="S88-i3-6Rj" secondAttribute="bottom" constant="32" id="4u5-QE-jOX"/>
+                            <constraint firstItem="f7h-35-4DR" firstAttribute="top" secondItem="8zM-ee-Wcz" secondAttribute="top" constant="30" id="NGh-aP-uWH"/>
+                            <constraint firstItem="sTB-lf-1Rf" firstAttribute="centerX" secondItem="S88-i3-6Rj" secondAttribute="centerX" id="Txv-2y-jHV"/>
+                            <constraint firstItem="S88-i3-6Rj" firstAttribute="top" secondItem="8zM-ee-Wcz" secondAttribute="top" constant="20" id="URT-uC-N9D"/>
+                            <constraint firstItem="8zM-ee-Wcz" firstAttribute="bottom" secondItem="sTB-lf-1Rf" secondAttribute="bottom" constant="322" id="ZSb-av-2Gf"/>
+                            <constraint firstItem="S88-i3-6Rj" firstAttribute="leading" secondItem="f7h-35-4DR" secondAttribute="trailing" constant="2" id="byh-0A-8Qf"/>
+                            <constraint firstItem="sTB-lf-1Rf" firstAttribute="leading" secondItem="8zM-ee-Wcz" secondAttribute="leading" constant="86" id="eDQ-ib-BDP"/>
+                            <constraint firstItem="S88-i3-6Rj" firstAttribute="centerX" secondItem="ghU-K0-B2v" secondAttribute="centerX" id="q88-vc-d07"/>
+                            <constraint firstItem="sTB-lf-1Rf" firstAttribute="centerY" secondItem="ghU-K0-B2v" secondAttribute="centerY" id="tNw-XI-Hdw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Dy-vT-xDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12.977099236641221" y="-54.225352112676056"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
